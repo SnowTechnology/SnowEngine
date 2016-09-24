@@ -1,20 +1,18 @@
-﻿Build started 24-9-2016 08:08:09.
+﻿Build started 24-9-2016 18:30:34.
      1>Project "C:\Users\Tripl3Fac3\Desktop\SnowEngine\SnowEngine\SnowEngine-core\SnowEngine-core.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D GLEW_STATIC /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\graphics\window.cpp src\main.cpp
-         window.cpp
-     1>c:\users\tripl3fac3\desktop\snowengine\snowengine\snowengine-core\src\graphics\window.h(25): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D GLEW_STATIC /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\maths\mat4.cpp src\maths\mathf.cpp src\maths\vectors.cpp
+         vectors.cpp
+         mathf.cpp
+     1>c:\users\tripl3fac3\desktop\snowengine\snowengine\snowengine-core\src\maths\mathf.cpp(10): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\tripl3fac3\desktop\snowengine\snowengine\snowengine-core\src\maths\mathf.cpp(15): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+         mat4.cpp
          Generating Code...
-         Compiling...
-         main.cpp
-     1>c:\users\tripl3fac3\desktop\snowengine\snowengine\snowengine-core\src\graphics\window.h(25): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-         Generating Code...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Tripl3Fac3\Desktop\SnowEngine\SnowEngine\Debug\SnowEngine-core.exe" /INCREMENTAL /NOLOGO glfw3.lib glew32s.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Tripl3Fac3\Desktop\SnowEngine\SnowEngine\Debug\SnowEngine-core.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Tripl3Fac3\Desktop\SnowEngine\SnowEngine\Debug\SnowEngine-core.lib" /MACHINE:X86 Debug\window.obj
-         Debug\main.obj
-         SnowEngine-core.vcxproj -> C:\Users\Tripl3Fac3\Desktop\SnowEngine\SnowEngine\Debug\SnowEngine-core.exe
-     1>Done Building Project "C:\Users\Tripl3Fac3\Desktop\SnowEngine\SnowEngine\SnowEngine-core\SnowEngine-core.vcxproj" (Build target(s)).
+     1>c:\users\tripl3fac3\desktop\snowengine\snowengine\snowengine-core\src\maths\vec2.h(29): error C4716: 'SnowEngine::Maths::vec2::getLength' : must return a value
+     1>c:\users\tripl3fac3\desktop\snowengine\snowengine\snowengine-core\src\maths\vec3.h(29): error C4716: 'SnowEngine::Maths::vec3::getLength' : must return a value
+     1>c:\users\tripl3fac3\desktop\snowengine\snowengine\snowengine-core\src\maths\vec4.h(29): error C4716: 'SnowEngine::Maths::vec4::getLength' : must return a value
+     1>Done Building Project "C:\Users\Tripl3Fac3\Desktop\SnowEngine\SnowEngine\SnowEngine-core\SnowEngine-core.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.19
+Time Elapsed 00:00:00.73

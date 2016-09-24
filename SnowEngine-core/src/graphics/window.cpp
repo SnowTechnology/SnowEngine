@@ -88,7 +88,7 @@ namespace SnowEngine { namespace Graphics {
 
 	void Window::update() const
 	{
-		GLint error = glGetError();
+		GLenum error = glGetError();
 		if (error != GL_NO_ERROR)
 		{
 			std::cout << "OpenGL Error (" << error << ")" << std::endl;
