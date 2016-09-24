@@ -11,6 +11,7 @@ namespace SnowEngine { namespace Maths {
 		mat4();
 		mat4(float diagonal);
 
+		mat4* multiply(mat4* other);
 
 		static mat4* identity();
 

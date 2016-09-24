@@ -1,5 +1,7 @@
 #include "graphics/window.h"
 
+#include <iostream>
+
 using namespace SnowEngine;
 using namespace SnowEngine::Graphics;
 
