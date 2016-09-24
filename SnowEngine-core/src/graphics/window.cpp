@@ -12,12 +12,21 @@ namespace SnowEngine { namespace Graphics {
 
 		if (!init())
 			glfwTerminate();
+
+		m_KeysPressed[GLFW_KEY_LAST + 1];
+		m_ButtonsPressed[GLFW_MOUSE_BUTTON_LAST + 1];
+		mx = 0.0;
+		my = 0.0;
 	}
 
 	Window::~Window()
 	{
 		glfwHideWindow(m_Window);
 		// TODO: release callbacks
+		glfwSetWindowSizeCallback(m_Window, NULL);
+		glfwSetKeyCallback(m_Window, NULL);
+		glfwSetMouseButtonCallback(m_Window, NULL);
+		glfwSetCursorPosCallback(m_Window, NULL);
 		// TODO: clear memory
 		glfwDestroyWindow(m_Window);
 		glfwTerminate();
@@ -45,6 +54,12 @@ namespace SnowEngine { namespace Graphics {
 
 		const GLFWvidmode *vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 		glfwSetWindowPos(m_Window, (vidmode->width - m_Width) / 2, (vidmode->height - m_Height) / 2);
+
+		glfwSetWindowUserPointer(m_Window, this);
+		glfwSetWindowSizeCallback(m_Window, windowSizeCallback);
+		glfwSetKeyCallback(m_Window, keyCallback);
+		glfwSetMouseButtonCallback(m_Window, mouseButtonCallback);
+		glfwSetCursorPosCallback(m_Window, cursorPosCallback);
 
 		glfwMakeContextCurrent(m_Window);
 		glfwSwapInterval(1);
@@ -81,6 +96,33 @@ namespace SnowEngine { namespace Graphics {
 
 		glfwSwapBuffers(m_Window);
 		glfwPollEvents();
+	}
+
+	void windowSizeCallback(GLFWwindow *window, int width, int height)
+	{
+		Window *win = (Window*) glfwGetWindowUserPointer(window);
+		win->m_Width = width;
+		win->m_Height = height;
+		glViewport(0, 0, width, height);
+	}
+
+	void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods)
+	{
+		Window *win = (Window*)glfwGetWindowUserPointer(window);
+		win->m_KeysPressed[key] = (action != GLFW_RELEASE);
+	}
+
+	void mouseButtonCallback(GLFWwindow *window, int button, int action, int mods)
+	{
+		Window *win = (Window*)glfwGetWindowUserPointer(window);
+		win->m_ButtonsPressed[button] = (action != GLFW_RELEASE);
+	}
+
+	void cursorPosCallback(GLFWwindow *window, double xpos, double ypos)
+	{
+		Window *win = (Window*)glfwGetWindowUserPointer(window);
+		win->mx = xpos;
+		win->my = ypos;
 	}
 
 } }
